@@ -1,19 +1,17 @@
-CONFIG += console debug_and_release
-CONFIG -= app_bundle
-QT += core gui widgets
-TEMPLATE = app
-
 # Shared files
-HEADERS += my_functions.h \
-    my_dialog.h
-SOURCES += my_functions.cpp \
-    my_dialog_test.cpp \
-    my_dialog.cpp
+HEADERS += my_dialog.h
+SOURCES += my_dialog.cpp
+FORMS += my_dialog.ui
 
 # Unique files
-SOURCES += main_test.cpp my_functions_test.cpp
+SOURCES += main_test.cpp my_dialog_test.cpp
+
+# Qt
+QT += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 # Debug and release build
+CONFIG += console debug_and_release
 CONFIG(release, debug|release) {
   DEFINES += NDEBUG
 }
@@ -21,5 +19,3 @@ CONFIG(release, debug|release) {
 # Boost.Test
 LIBS += -lboost_unit_test_framework
 
-FORMS += \
-    my_dialog.ui
