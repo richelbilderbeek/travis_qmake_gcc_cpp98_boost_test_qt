@@ -1,16 +1,20 @@
 #!/bin/bash
-qmake travis_qmake_gcc_cpp98_boost_test.pro
+qmake travis_qmake_gcc_cpp98_boost_test_qt.pro
 make debug
-./travis_qmake_gcc_cpp98_boost_test
 
-qmake travis_qmake_gcc_cpp98_boost_test.pro
+# Don't run GUI application on Travis
+#./travis_qmake_gcc_cpp98_boost_test_qt 
+
+qmake travis_qmake_gcc_cpp98_boost_test_qt.pro
 make release
-./travis_qmake_gcc_cpp98_boost_test
 
-qmake travis_qmake_gcc_cpp98_boost_test_test.pro
+# Don't run GUI application on Travis
+# ./travis_qmake_gcc_cpp98_boost_test_qt
+
+qmake travis_qmake_gcc_cpp98_boost_test_qt_test.pro
 make debug
-./travis_qmake_gcc_cpp98_boost_test_test
+./travis_qmake_gcc_cpp98_boost_test_qt_test
 
-qmake travis_qmake_gcc_cpp98_boost_test_test.pro
+qmake travis_qmake_gcc_cpp98_boost_test_qt_test.pro
 make release
-./travis_qmake_gcc_cpp98_boost_test_test
+./travis_qmake_gcc_cpp98_boost_test_qt_test

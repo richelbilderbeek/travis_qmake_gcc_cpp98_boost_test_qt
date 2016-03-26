@@ -90,7 +90,9 @@ int main(int argc, char* argv[])
 {
   QApplication a(argc, argv);
   ::boost::unit_test::unit_test_main(&initialise, argc, argv);
-  return a.exec();
+
+  //Don't call 'a.exec()', as the application will not terminate anymore
+  //return a.exec();
 }
 
 
