@@ -10,12 +10,6 @@ SOURCES += main.cpp
 QT += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-# Debug and release build
-CONFIG += console debug_and_release
-CONFIG(release, debug|release) {
-  DEFINES += NDEBUG
-}
-
 # Boost.Test
 LIBS += -lboost_unit_test_framework
 
